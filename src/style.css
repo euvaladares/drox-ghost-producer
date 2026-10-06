@@ -575,7 +575,8 @@ ul, ol {
 .floating-card-1 {
   bottom: 20px;
   left: -20px;
-  width: 250px;
+  width: 320px;
+  max-width: 90vw;
 }
 
 .spec-header {
