@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#070709" />
+  <title>DROX — Ghost Production &amp; Produção Musical | Estúdio Confidencial</title>
+  <meta name="description" content="Serviço premium e confidencial de Ghost Production, produção musical, refinamento de demos e mix & master por DROX. Produção de alto nível para DJs e produtores de House." />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/src/assets/logo-drox-white.svg" />
+
+  <!-- Fonts: Syne, Space Grotesk, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body class="bg-black text-light antialiased">
+  <!-- Subtle Ambient Glow Canvas & Analog Noise -->
+  <div class="noise-overlay" aria-hidden="true"></div>
+  <div class="ambient-glow glow-top" aria-hidden="true"></div>
+  <div class="ambient-glow glow-middle" aria-hidden="true"></div>
+
+  <!-- NAVIGATION -->
+  <header class="site-header" id="header">
+    <div class="container header-container">
+      <a href="#" class="brand-logo" aria-label="DROX Home">
+        <img src="/src/assets/logo-drox-white.svg" alt="DROX" class="logo-img" />
+        <span class="brand-sub">STUDIO</span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Navegação principal">
+        <a href="#servicos" class="nav-link"><span class="nav-num">01</span> SERVIÇOS</a>
+        <a href="#como-funciona" class="nav-link"><span class="nav-num">02</span> PROCESSO</a>
+        <a href="#sobre" class="nav-link"><span class="nav-num">03</span> DROX</a>
+      </nav>
+
+      <div class="header-actions">
+        <div class="studio-status" title="Vagas abertas para produção">
+          <span class="status-pulse"></span>
+          <span class="status-text">DISPONÍVEL P/ PROJETOS</span>
+        </div>
+        <button type="button" class="btn btn-primary btn-sm open-budget-modal" id="header-cta-btn">
+          <span>SOLICITAR ORÇAMENTO</span>
+          <svg class="btn-arrow" width="12" height="12" viewBox="0 0 12 12" fill="none">
+            <path d="M2.5 9.5L9.5 2.5M9.5 2.5H4M9.5 2.5V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+
+        <button type="button" class="mobile-menu-btn" id="mobile-toggle-btn" aria-label="Abrir menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Navigation -->
+    <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+      <div class="mobile-drawer-inner">
+        <nav class="mobile-nav">
+          <a href="#servicos" class="mobile-nav-link"><span>01</span> SERVIÇOS</a>
+          <a href="#como-funciona" class="mobile-nav-link"><span>02</span> PROCESSO</a>
+          <a href="#sobre" class="mobile-nav-link"><span>03</span> DROX</a>
+          <a href="#contato" class="mobile-nav-link"><span>04</span> CONTATO</a>
+        </nav>
+        <div class="mobile-drawer-footer">
+          <button type="button" class="btn btn-primary btn-block open-budget-modal" id="mobile-drawer-cta">
+            <span>SOLICITAR ORÇAMENTO</span>
+          </button>
+          <p class="mobile-drawer-note">100% Confidencial • Brasília &amp; Worldwide</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- ==========================================
+         01 — HERO SECTION
+         ========================================== -->
+    <section class="hero-section" id="hero">
+      <div class="container hero-container">
+        
+        <div class="hero-content">
+          <!-- Kicker Tag -->
+          <div class="kicker-badge">
+            <span class="kicker-dot"></span>
+            <span class="kicker-mono">GHOST PRODUCTION &amp; MUSIC STUDIO</span>
+          </div>
+
+          <!-- Main Headline -->
+          <h1 class="hero-headline">
+            VOCÊ TRAZ A IDEIA.<br />
+            <span class="hero-headline-accent">O DROX TRANSFORMA EM MÚSICA.</span>
+          </h1>
+
+          <!-- Subheadline -->
+          <p class="hero-subheadline">
+            Ghost Production, produção musical, mix e master para DJs e produtores que exigem resultado profissional e padrão internacional de pista.
+          </p>
+
+          <!-- CTAs -->
+          <div class="hero-cta-group">
+            <button type="button" class="btn btn-primary btn-lg open-budget-modal" id="hero-primary-cta">
+              <span>SOLICITAR ORÇAMENTO</span>
+              <svg class="btn-arrow" width="16" height="16" viewBox="0 0 12 12" fill="none">
+                <path d="M2.5 9.5L9.5 2.5M9.5 2.5H4M9.5 2.5V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <a href="#servicos" class="btn btn-ghost btn-lg" id="hero-secondary-cta">
+              <span>VER TRABALHOS &amp; SERVIÇOS</span>
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path d="M7 2.5V11.5M7 11.5L11.5 7M7 11.5L2.5 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Hero Pillars / Differential Badges -->
+          <div class="hero-pillars">
+            <div class="hero-pillar-item">
+              <span class="pillar-bullet"></span>
+              <span class="pillar-label"><strong>100% Confidencial:</strong> Você cuida do artista. O DROX cuida da produção.</span>
+            </div>
+            <div class="hero-pillar-item">
+              <span class="pillar-bullet"></span>
+              <span class="pillar-label"><strong>House &amp; Vertentes:</strong> Tech House, Minimal, Deep &amp; Club Ready.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Visual Hero Media -->
+        <div class="hero-visual">
+          <div class="hero-card-frame">
+            <div class="hero-image-wrap">
+              <img 
+                src="/src/assets/DSC_2189.jpeg" 
+                alt="DROX em estúdio e performance ao vivo no mixer Pioneer" 
+                class="hero-img"
+                loading="eager"
+              />
+              <div class="hero-image-overlay"></div>
+            </div>
+
+            <!-- Floating Studio Spec Card -->
+            <div class="floating-spec-card floating-card-1">
+              <div class="spec-header">
+                <span class="spec-live-indicator"></span>
+                <span class="spec-code">STUDIO SPEC // HOUSE &amp; TECH</span>
+              </div>
+              <div class="spec-details">
+                <div class="spec-item">
+                  <span class="spec-label">LOUDNESS</span>
+                  <span class="spec-value">-6.5 LUFS INTEGRATED</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">DELIVERY</span>
+                  <span class="spec-value">MASTER + STEMS + EXTENDED</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Floating Confidentiality Card -->
+            <div class="floating-spec-card floating-card-2">
+              <div class="confidential-badge">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+                <span>SIGILO &amp; CESSÃO TOTAL</span>
+              </div>
+              <p class="confidential-text">Sem necessidade de crédito público. A track é 100% sua.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- AUTHORITY STRIP / LOGO MARQUEE -->
+      <div class="authority-strip">
+        <div class="container strip-container">
+          <span class="strip-label">SUPORTE GLOBAL &amp; LINE-UPS:</span>
+          <div class="marquee-track">
+            <div class="marquee-content">
+              <span class="marquee-item"><span class="highlight">VINTAGE CULTURE</span> SUPORTE</span>
+              <span class="marquee-sep">•</span>
+              <span class="marquee-item"><span class="highlight">MARCO CAROLA</span> SUPORTE</span>
+              <span class="marquee-sep">•</span>
+              <span class="marquee-item"><span class="highlight">150K+</span> SPOTIFY STREAMS</span>
+              <span class="marquee-sep">•</span>
+              <span class="marquee-item"><span class="highlight">BRUNO BE</span> LINE-UP</span>
+              <span class="marquee-sep">•</span>
+              <span class="marquee-item"><span class="highlight">VOLKODER</span> LINE-UP</span>
+              <span class="marquee-sep">•</span>
+              <span class="marquee-item"><span class="highlight">GIU</span> LINE-UP</span>
+              <span class="marquee-sep">•</span>
+              <span class="marquee-item"><span class="highlight">EUROPA</span> GRAVADORAS</span>
+              <span class="marquee-sep">•</span>
+              <span class="marquee-item"><span class="highlight">TURNÊ INTERNACIONAL</span> 2025</span>
+              <span class="marquee-sep">•</span>
+            </div>
+            <!-- Duplicated for seamless CSS animation -->
+            <div class="marquee-content" aria-hidden="true">
+              <span class="marquee-item"><span class="highlight">VINTAGE CULTURE</span> SUPORTE</span>
+              <span class="marquee-sep">•</span>
+              <span class="marquee-item"><span class="highlight">MARCO CAROLA</span> SUPORTE</span>
+              <span class="marquee-sep">•</span>
+              <span class="marquee-item"><span class="highlight">150K+</span> SPOTIFY STREAMS</span>
+              <span class="marquee-sep">•</span>
+              <span class="marquee-item"><span class="highlight">BRUNO BE</span> LINE-UP</span>
+              <span class="marquee-sep">•</span>
+              <span class="marquee-item"><span class="highlight">VOLKODER</span> LINE-UP</span>
+              <span class="marquee-sep">•</span>
+              <span class="marquee-item"><span class="highlight">GIU</span> LINE-UP</span>
+              <span class="marquee-sep">•</span>
+              <span class="marquee-item"><span class="highlight">EUROPA</span> GRAVADORAS</span>
+              <span class="marquee-sep">•</span>
+              <span class="marquee-item"><span class="highlight">TURNÊ INTERNACIONAL</span> 2025</span>
+              <span class="marquee-sep">•</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         02 — SERVIÇO SECTION
+         ========================================== -->
+    <section class="services-section section-padding" id="servicos">
+      <div class="container">
+        
+        <!-- Section Header -->
+        <div class="section-header">
+          <div class="kicker-badge">
+            <span class="kicker-dot"></span>
+            <span class="kicker-mono">02 // SERVIÇOS DE ESTÚDIO</span>
+          </div>
+          <h2 class="section-title">
+            Do primeiro rascunho<br />ao master final.
+          </h2>
+          <p class="section-subtitle">
+            Você pode chegar com uma ideia, uma demo ou uma produção quase pronta. O processo se adapta ao que sua música precisa para soar gigante.
+          </p>
+        </div>
+
+        <!-- Proposition Banner: "Você cuida do artista. O DROX cuida da produção." -->
+        <div class="proposition-card">
+          <div class="proposition-tag">PROPOSTA DE VALOR</div>
+          <div class="proposition-main">
+            <p class="proposition-quote">
+              “Você cuida do artista. O DROX cuida da produção.”
+            </p>
+            <p class="proposition-desc">
+              O serviço é totalmente confidencial, com cessão de direitos e sem exigência de créditos públicos ao DROX. Lance como parte autêntica do seu projeto artístico.
+            </p>
+          </div>
+        </div>
+
+        <!-- Services Grid (4 Cards) -->
+        <div class="services-grid">
+          
+          <!-- Card 1: Ghost Production -->
+          <div class="service-card" data-service="Ghost Production">
+            <div class="card-top">
+              <span class="card-num">01</span>
+              <span class="card-tag">TRACK COMPLETA</span>
+            </div>
+            <h3 class="card-title">GHOST PRODUCTION</h3>
+            <p class="card-desc">
+              Sua track produzida do zero, com identidade única, arranjo para pista e confidencialidade total.
+            </p>
+            <ul class="card-features">
+              <li>Desenvolvimento do conceito e briefing</li>
+              <li>Sound design exclusivo &amp; timbragem de ponta</li>
+              <li>Estrutura e arranjo calibrados para clube</li>
+              <li>Mix, master e stems completos inclusos</li>
+            </ul>
+            <div class="card-action">
+              <button type="button" class="btn btn-outline btn-sm open-budget-modal" data-pref-service="Ghost Production">
+                <span>SOLICITAR GHOST</span>
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                  <path d="M2.5 9.5L9.5 2.5M9.5 2.5H4M9.5 2.5V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 2: Produção Musical -->
+          <div class="service-card" data-service="Produção Musical">
+            <div class="card-top">
+              <span class="card-num">02</span>
+              <span class="card-tag">ARRANJO &amp; DESIGN</span>
+            </div>
+            <h3 class="card-title">PRODUÇÃO MUSICAL</h3>
+            <p class="card-desc">
+              Desenvolvimento de ideias, arranjo estrutural, sound design avançado e identidade sonora autoral.
+            </p>
+            <ul class="card-features">
+              <li>Transformação de rascunhos em arranjo sólido</li>
+              <li>Criação de drops impactantes e build-ups tensos</li>
+              <li>Camadas de basslines e sintetizadores com peso</li>
+              <li>Direção artística e sonoridade coesa</li>
+            </ul>
+            <div class="card-action">
+              <button type="button" class="btn btn-outline btn-sm open-budget-modal" data-pref-service="Produção Musical">
+                <span>SOLICITAR PRODUÇÃO</span>
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                  <path d="M2.5 9.5L9.5 2.5M9.5 2.5H4M9.5 2.5V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 3: Refinamento de Demos -->
+          <div class="service-card" data-service="Refinamento de Demos">
+            <div class="card-top">
+              <span class="card-num">03</span>
+              <span class="card-tag">ELEVAÇÃO DE NÍVEL</span>
+            </div>
+            <h3 class="card-title">REFINAMENTO</h3>
+            <p class="card-desc">
+              Pegamos sua demo ou projeto inacabado e elevamos a produção ao padrão exigido por gravadoras internacionais.
+            </p>
+            <ul class="card-features">
+              <li>Substituição de timbres fracos por sons profissionais</li>
+              <li>Correção de dinâmica, grooves e transições</li>
+              <li>Ajuste do drop para funcionar em sound systems</li>
+              <li>Finalização de projetos travados no estúdio</li>
+            </ul>
+            <div class="card-action">
+              <button type="button" class="btn btn-outline btn-sm open-budget-modal" data-pref-service="Refinamento de Demos">
+                <span>ENVIAR MINHA DEMO</span>
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                  <path d="M2.5 9.5L9.5 2.5M9.5 2.5H4M9.5 2.5V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 4: Mix & Master -->
+          <div class="service-card" data-service="Mix & Master">
+            <div class="card-top">
+              <span class="card-num">04</span>
+              <span class="card-tag">PRESSÃO &amp; CLAREZA</span>
+            </div>
+            <h3 class="card-title">MIX &amp; MASTER</h3>
+            <p class="card-desc">
+              Mais impacto, sub-bass definido, separação estéreo cristalina e loudness competitivo para sound system e Spotify.
+            </p>
+            <ul class="card-features">
+              <li>Equilíbrio tonal e eliminação de mascaramentos</li>
+              <li>Graves e kicks com pegada sólida de pista</li>
+              <li>Abertura estéreo precisa e fidelidade mono</li>
+              <li>Masterização em WAV 24-bit + versão MP3 320kbps</li>
+            </ul>
+            <div class="card-action">
+              <button type="button" class="btn btn-outline btn-sm open-budget-modal" data-pref-service="Mix & Master">
+                <span>SOLICITAR MIX &amp; MASTER</span>
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                  <path d="M2.5 9.5L9.5 2.5M9.5 2.5H4M9.5 2.5V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Interactive Audio / Sound Design Showcase -->
+        <div class="sound-showcase">
+          <div class="sound-showcase-header">
+            <div class="showcase-info">
+              <span class="spec-live-indicator"></span>
+              <span class="showcase-title">ESTILOS &amp; ASSINATURA SONORA // DROX STUDIO</span>
+            </div>
+            <div class="showcase-tech">HOUSE • TECH HOUSE • DEEP • MELODIC</div>
+          </div>
+
+          <div class="sound-tracks-list">
+            
+            <div class="sound-track-row" data-style="tech-house">
+              <button type="button" class="sound-play-btn" aria-label="Simular prévia de Tech House" id="preview-tech-house">
+                <svg class="play-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                </svg>
+                <svg class="pause-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="display:none;">
+                  <rect x="6" y="4" width="4" height="16"></rect>
+                  <rect x="14" y="4" width="4" height="16"></rect>
+                </svg>
+              </button>
+              <div class="track-meta">
+                <span class="track-name">TECH HOUSE // CLUB IMPACT</span>
+                <span class="track-vibe">Bassline rolante, percussão cortante, vocal chops e drop explosivo</span>
+              </div>
+              <div class="track-waveform" aria-hidden="true">
+                <span class="bar" style="height:40%"></span>
+                <span class="bar" style="height:65%"></span>
+                <span class="bar" style="height:85%"></span>
+                <span class="bar" style="height:50%"></span>
+                <span class="bar" style="height:90%"></span>
+                <span class="bar" style="height:70%"></span>
+                <span class="bar" style="height:45%"></span>
+                <span class="bar" style="height:80%"></span>
+                <span class="bar" style="height:95%"></span>
+                <span class="bar" style="height:60%"></span>
+                <span class="bar" style="height:75%"></span>
+                <span class="bar" style="height:88%"></span>
+                <span class="bar" style="height:55%"></span>
+                <span class="bar" style="height:92%"></span>
+                <span class="bar" style="height:68%"></span>
+                <span class="bar" style="height:40%"></span>
+              </div>
+              <div class="track-bpm">126 BPM</div>
+            </div>
+
+            <div class="sound-track-row" data-style="deep-house">
+              <button type="button" class="sound-play-btn" aria-label="Simular prévia de Deep House" id="preview-deep-house">
+                <svg class="play-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                </svg>
+                <svg class="pause-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="display:none;">
+                  <rect x="6" y="4" width="4" height="16"></rect>
+                  <rect x="14" y="4" width="4" height="16"></rect>
+                </svg>
+              </button>
+              <div class="track-meta">
+                <span class="track-name">GROOVY HOUSE // SUNSET &amp; WARMTH</span>
+                <span class="track-vibe">Acordes sofisticados, grooves quentes, synths analógicos e atmosfera envolvente</span>
+              </div>
+              <div class="track-waveform" aria-hidden="true">
+                <span class="bar" style="height:35%"></span>
+                <span class="bar" style="height:55%"></span>
+                <span class="bar" style="height:70%"></span>
+                <span class="bar" style="height:60%"></span>
+                <span class="bar" style="height:80%"></span>
+                <span class="bar" style="height:65%"></span>
+                <span class="bar" style="height:50%"></span>
+                <span class="bar" style="height:75%"></span>
+                <span class="bar" style="height:85%"></span>
+                <span class="bar" style="height:70%"></span>
+                <span class="bar" style="height:65%"></span>
+                <span class="bar" style="height:80%"></span>
+                <span class="bar" style="height:60%"></span>
+                <span class="bar" style="height:75%"></span>
+                <span class="bar" style="height:55%"></span>
+                <span class="bar" style="height:35%"></span>
+              </div>
+              <div class="track-bpm">124 BPM</div>
+            </div>
+
+            <div class="sound-track-row" data-style="melodic-club">
+              <button type="button" class="sound-play-btn" aria-label="Simular prévia de Melodic Club" id="preview-melodic-club">
+                <svg class="play-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                </svg>
+                <svg class="pause-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="display:none;">
+                  <rect x="6" y="4" width="4" height="16"></rect>
+                  <rect x="14" y="4" width="4" height="16"></rect>
+                </svg>
+              </button>
+              <div class="track-meta">
+                <span class="track-name">PEAK-TIME CLUB // HIGH ENERGY</span>
+                <span class="track-vibe">Pressão sonora massiva, graves cirúrgicos, tensão contínua para pistas principais</span>
+              </div>
+              <div class="track-waveform" aria-hidden="true">
+                <span class="bar" style="height:50%"></span>
+                <span class="bar" style="height:75%"></span>
+                <span class="bar" style="height:90%"></span>
+                <span class="bar" style="height:65%"></span>
+                <span class="bar" style="height:100%"></span>
+                <span class="bar" style="height:85%"></span>
+                <span class="bar" style="height:70%"></span>
+                <span class="bar" style="height:95%"></span>
+                <span class="bar" style="height:90%"></span>
+                <span class="bar" style="height:75%"></span>
+                <span class="bar" style="height:85%"></span>
+                <span class="bar" style="height:98%"></span>
+                <span class="bar" style="height:70%"></span>
+                <span class="bar" style="height:95%"></span>
+                <span class="bar" style="height:80%"></span>
+                <span class="bar" style="height:45%"></span>
+              </div>
+              <div class="track-bpm">127 BPM</div>
+            </div>
+
+          </div>
+          <div class="sound-showcase-footer">
+            <p>💡 Cada produção é desenvolvida sob medida para a sua identidade artística. Sem templates prontos.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         03 — COMO FUNCIONA
+         ========================================== -->
+    <section class="process-section section-padding" id="como-funciona">
+      <div class="container">
+        
+        <div class="section-header">
+          <div class="kicker-badge">
+            <span class="kicker-dot"></span>
+            <span class="kicker-mono">03 // PROCESSO TRANSPARENTE</span>
+          </div>
+          <h2 class="section-title">
+            Como funciona
+          </h2>
+          <p class="section-subtitle">
+            Um fluxo enxuto e sem complicação. Do primeiro contato à entrega final dos masters e stems.
+          </p>
+        </div>
+
+        <!-- Process Timeline Grid -->
+        <div class="process-timeline">
+          
+          <!-- Step 1 -->
+          <div class="process-step">
+            <div class="step-num-wrap">
+              <span class="step-num">01</span>
+              <div class="step-connector"></div>
+            </div>
+            <div class="step-content">
+              <span class="step-tag">BRIEFING &amp; REFERÊNCIA</span>
+              <h3 class="step-title">ENVIE SUA IDEIA</h3>
+              <p class="step-desc">
+                Envie sua demo, referência musical, rascunho de celular ou briefing do que você quer produzir. Alinhamos referências, tom e objetivo da track.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="process-step">
+            <div class="step-num-wrap">
+              <span class="step-num">02</span>
+              <div class="step-connector"></div>
+            </div>
+            <div class="step-content">
+              <span class="step-tag">CRIAÇÃO EM ESTÚDIO</span>
+              <h3 class="step-title">PRODUÇÃO</h3>
+              <p class="step-desc">
+                DROX desenvolve, produz ou refina a track no estúdio. Enviamos uma versão demo para você ouvir e validar a direção musical.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="process-step">
+            <div class="step-num-wrap">
+              <span class="step-num">03</span>
+              <div class="step-connector"></div>
+            </div>
+            <div class="step-content">
+              <span class="step-tag">POLIMENTO &amp; PRESSÃO</span>
+              <h3 class="step-title">REFINAMENTO</h3>
+              <p class="step-desc">
+                Mix, master e os ajustes finos necessários. Garantimos que os graves, transientes e dinâmicas respondam com perfeição em qualquer sound system.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="process-step">
+            <div class="step-num-wrap">
+              <span class="step-num">04</span>
+              <div class="step-connector"></div>
+            </div>
+            <div class="step-content">
+              <span class="step-tag">LANÇAMENTO PRONTO</span>
+              <h3 class="step-title">ENTREGA</h3>
+              <p class="step-desc">
+                Você recebe sua produção completa: Master (WAV 24-bit), Extended Mix, Radio Edit e stems separados prontos para o seu projeto e gravadoras.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Mid-page CTA -->
+        <div class="process-cta-banner">
+          <div class="banner-text">
+            <span class="banner-title">Pronto para dar início à sua próxima produção?</span>
+            <span class="banner-sub">Discuta seu projeto diretamente com o DROX sem intermediários.</span>
+          </div>
+          <button type="button" class="btn btn-primary open-budget-modal" id="process-cta-btn">
+            <span>FALAR COM O DROX</span>
+            <svg class="btn-arrow" width="14" height="14" viewBox="0 0 12 12" fill="none">
+              <path d="M2.5 9.5L9.5 2.5M9.5 2.5H4M9.5 2.5V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         04 — AUTORIDADE / DROX
+         ========================================== -->
+    <section class="authority-section section-padding" id="sobre">
+      <div class="container">
+        
+        <div class="authority-layout">
+          
+          <!-- Image Column -->
+          <div class="authority-photo-column">
+            <div class="authority-photo-frame">
+              <img 
+                src="/src/assets/DSC_2079.jpeg" 
+                alt="DROX durante apresentação ao vivo em clube" 
+                class="authority-img"
+                loading="lazy"
+              />
+              <div class="photo-badge">
+                <span class="photo-badge-city">BRASÍLIA • WORLDWIDE</span>
+                <span class="photo-badge-label">DJ &amp; MUSIC PRODUCER</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Content Column -->
+          <div class="authority-text-column">
+            <div class="kicker-badge">
+              <span class="kicker-dot"></span>
+              <span class="kicker-mono">04 // QUEM PRODUZ</span>
+            </div>
+
+            <h2 class="authority-title">
+              Produção feita por quem vive a música eletrônica.
+            </h2>
+
+            <p class="authority-bio">
+              DROX é DJ e produtor de Brasília, com mais de 150 mil streams no Spotify, lançamentos em gravadoras europeias e suporte de nomes como Vintage Culture e Marco Carola.
+            </p>
+
+            <!-- Metrics Grid -->
+            <div class="authority-metrics-grid">
+              
+              <div class="metric-card">
+                <div class="metric-value">150K+</div>
+                <div class="metric-label">Spotify streams</div>
+                <div class="metric-sub">Crescimento 100% orgânico</div>
+              </div>
+
+              <div class="metric-card">
+                <div class="metric-value">2020</div>
+                <div class="metric-label">Início do projeto</div>
+                <div class="metric-sub">Anos de estúdio e pista</div>
+              </div>
+
+              <div class="metric-card">
+                <div class="metric-value">EUROPA</div>
+                <div class="metric-label">Lançamentos</div>
+                <div class="metric-sub">Gravadoras relevantes</div>
+              </div>
+
+              <div class="metric-card">
+                <div class="metric-value">2025</div>
+                <div class="metric-label">Turnê Internacional</div>
+                <div class="metric-sub">Passando pela Colômbia</div>
+              </div>
+
+            </div>
+
+            <!-- Supports & Lineups Showcase -->
+            <div class="credibility-lists">
+              <div class="cred-block">
+                <span class="cred-header">SUPORTE DE GIGANTES GLOBAIS:</span>
+                <div class="cred-tags">
+                  <span class="cred-pill">Vintage Culture</span>
+                  <span class="cred-pill">Marco Carola</span>
+                </div>
+              </div>
+
+              <div class="cred-block">
+                <span class="cred-header">DIVIDIU LINE-UP COM:</span>
+                <div class="cred-tags">
+                  <span class="cred-pill">Bruno Be</span>
+                  <span class="cred-pill">GIU</span>
+                  <span class="cred-pill">Volkoder</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         05 — CTA FINAL
+         ========================================== -->
+    <section class="final-cta-section section-padding" id="contato">
+      <div class="container final-cta-container">
+        
+        <!-- Background Visual Accent with DJ gig atmosphere -->
+        <div class="cta-backdrop-wrap" aria-hidden="true">
+          <img 
+            src="/src/assets/DSC_2113.jpeg" 
+            alt="" 
+            class="cta-backdrop-img"
+            loading="lazy"
+          />
+          <div class="cta-backdrop-overlay"></div>
+        </div>
+
+        <div class="final-cta-box">
+          <div class="kicker-badge centered-kicker">
+            <span class="kicker-dot"></span>
+            <span class="kicker-mono">05 // INICIE SEU PROJETO</span>
+          </div>
+
+          <h2 class="final-cta-headline">
+            Tem uma track para terminar?
+          </h2>
+
+          <p class="final-cta-sub">
+            Envie sua ideia, demo ou briefing e descubra o que podemos construir juntos.
+          </p>
+
+          <div class="final-cta-buttons">
+            <button type="button" class="btn btn-primary btn-xl open-budget-modal" id="final-primary-cta">
+              <span>SOLICITAR ORÇAMENTO</span>
+              <svg class="btn-arrow" width="16" height="16" viewBox="0 0 12 12" fill="none">
+                <path d="M2.5 9.5L9.5 2.5M9.5 2.5H4M9.5 2.5V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <button type="button" class="btn btn-secondary btn-xl open-budget-modal" id="final-secondary-cta" data-mode="falar">
+              <span>FALAR COM O DROX</span>
+            </button>
+          </div>
+
+          <!-- Trust points -->
+          <div class="trust-strip">
+            <div class="trust-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+              <span>100% Confidencial</span>
+            </div>
+            <div class="trust-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span>Cessão Total de Direitos</span>
+            </div>
+            <div class="trust-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              <span>Atendimento Direto &amp; Ágil</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================
+       MODAL DE ORÇAMENTO / BRIEFING DIRETO
+       ========================================== -->
+  <div class="modal-backdrop" id="budget-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-window">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <span class="kicker-mono">DROX STUDIO // BRIEFING</span>
+          <h3 class="modal-title" id="modal-title">Solicitar Orçamento</h3>
+        </div>
+        <button type="button" class="modal-close-btn" id="modal-close-btn" aria-label="Fechar janela">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <form class="modal-body" id="budget-form">
+        <p class="modal-desc">
+          Conte um pouco sobre sua ideia ou necessidade. Retornaremos com disponibilidade e proposta de produção.
+        </p>
+
+        <!-- Service Picker Chips -->
+        <div class="form-group">
+          <label class="form-label">TIPO DE SERVIÇO</label>
+          <div class="service-chips-grid">
+            <label class="chip-label">
+              <input type="radio" name="service_type" value="Ghost Production" checked />
+              <span class="chip-btn">Ghost Production</span>
+            </label>
+            <label class="chip-label">
+              <input type="radio" name="service_type" value="Produção Musical" />
+              <span class="chip-btn">Produção Musical</span>
+            </label>
+            <label class="chip-label">
+              <input type="radio" name="service_type" value="Refinamento de Demos" />
+              <span class="chip-btn">Refinamento de Demo</span>
+            </label>
+            <label class="chip-label">
+              <input type="radio" name="service_type" value="Mix & Master" />
+              <span class="chip-btn">Mix &amp; Master</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-grid-2">
+          <!-- Nome / Artista -->
+          <div class="form-group">
+            <label for="input-artist" class="form-label">SEU NOME / NOME ARTÍSTICO *</label>
+            <input 
+              type="text" 
+              id="input-artist" 
+              name="artist_name" 
+              class="form-input" 
+              placeholder="Ex: DJ Alex / Lucas Silva" 
+              required 
+            />
+          </div>
+
+          <!-- Contato (WhatsApp ou E-mail) -->
+          <div class="form-group">
+            <label for="input-contact" class="form-label">SEU WHATSAPP OU E-MAIL *</label>
+            <input 
+              type="text" 
+              id="input-contact" 
+              name="contact_info" 
+              class="form-input" 
+              placeholder="Ex: (61) 99999-9999 ou email" 
+              required 
+            />
+          </div>
+        </div>
+
+        <!-- Link Demo / Referência -->
+        <div class="form-group">
+          <label for="input-link" class="form-label">LINK DA DEMO OU REFERÊNCIA (OPCIONAL)</label>
+          <input 
+            type="url" 
+            id="input-link" 
+            name="demo_link" 
+            class="form-input" 
+            placeholder="SoundCloud / Dropbox / Google Drive / Spotify" 
+          />
+        </div>
+
+        <!-- Briefing Message -->
+        <div class="form-group">
+          <label for="input-briefing" class="form-label">DETALHES DA TRACK / OBSERVAÇÕES</label>
+          <textarea 
+            id="input-briefing" 
+            name="briefing_notes" 
+            rows="3" 
+            class="form-textarea" 
+            placeholder="Conte o que você procura: estilo (Tech House, Minimal, etc.), prazo desejado, se já tem rascunho..."
+          ></textarea>
+        </div>
+
+        <!-- Modal Submit Actions -->
+        <div class="modal-footer-actions">
+          <button type="submit" class="btn btn-primary btn-block btn-lg" id="submit-briefing-btn">
+            <span>ENVIAR BRIEFING</span>
+            <svg class="btn-arrow" width="14" height="14" viewBox="0 0 12 12" fill="none">
+              <path d="M2.5 9.5L9.5 2.5M9.5 2.5H4M9.5 2.5V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          
+          <div class="modal-notice">
+            🔒 <span>Suas ideias e dados são tratados sob rigorosa confidencialidade.</span>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      
+      <div class="footer-brand-col">
+        <a href="#" class="brand-logo" aria-label="DROX Home">
+          <img src="/src/assets/logo-drox-white.svg" alt="DROX" class="logo-img" />
+          <span class="brand-sub">STUDIO</span>
+        </a>
+        <p class="footer-motto">
+          Ghost Production, arranjo, sound design, mixagem e masterização com padrão internacional de pistas.
+        </p>
+      </div>
+
+      <div class="footer-links-col">
+        <span class="footer-heading">NAVEGAÇÃO</span>
+        <ul class="footer-links-list">
+          <li><a href="#servicos">Serviços de Estúdio</a></li>
+          <li><a href="#como-funciona">Como Funciona</a></li>
+          <li><a href="#sobre">Sobre o DROX</a></li>
+          <li><a href="#contato">Solicitar Orçamento</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-meta-col">
+        <span class="footer-heading">DIRETRIZES</span>
+        <div class="footer-tags">
+          <span class="footer-tag-item">100% Confidencial</span>
+          <span class="footer-tag-item">Cessão Total</span>
+          <span class="footer-tag-item">Brasília, Brasil</span>
+          <span class="footer-tag-item">Global Delivery</span>
+        </div>
+        <p class="footer-copy">
+          &copy; <span id="current-year">2026</span> DROX. Todos os direitos reservados.
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Script logic -->
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
