@@ -39,12 +39,12 @@
           <span class="status-pulse"></span>
           <span class="status-text">DISPONÍVEL P/ PROJETOS</span>
         </div>
-        <button type="button" class="btn btn-primary btn-sm open-budget-modal" id="header-cta-btn">
-          <span>SOLICITAR ORÇAMENTO</span>
+        <a href="https://wa.me/5561981107284" target="_blank" class="btn btn-primary btn-sm">
+          <span>FALAR COMIGO</span>
           <svg class="btn-arrow" width="12" height="12" viewBox="0 0 12 12" fill="none">
             <path d="M2.5 9.5L9.5 2.5M9.5 2.5H4M9.5 2.5V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
-        </button>
+        </a>
 
         </div>
     </div>
@@ -77,12 +77,12 @@
 
           <!-- CTAs -->
           <div class="hero-cta-group">
-            <button type="button" class="btn btn-primary btn-lg open-budget-modal" id="hero-primary-cta">
-              <span>SOLICITAR ORÇAMENTO</span>
+            <a href="https://wa.me/5561981107284" target="_blank" class="btn btn-primary btn-lg">
+              <span>FALAR COMIGO</span>
               <svg class="btn-arrow" width="16" height="16" viewBox="0 0 12 12" fill="none">
                 <path d="M2.5 9.5L9.5 2.5M9.5 2.5H4M9.5 2.5V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
-            </button>
+            </a>
             <a href="#spotify-embed" class="btn btn-ghost btn-lg" id="hero-secondary-cta">
               <span>OUVIR TRABALHOS</span>
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
@@ -288,12 +288,12 @@
             <span class="banner-title">Pronto para dar início à sua próxima produção?</span>
             <span class="banner-sub">Discuta seu projeto diretamente comigo, sem intermediários.</span>
           </div>
-          <button type="button" class="btn btn-primary open-budget-modal" id="process-cta-btn">
+          <a href="https://wa.me/5561981107284" target="_blank" class="btn btn-primary">
             <span>FALAR COMIGO</span>
             <svg class="btn-arrow" width="14" height="14" viewBox="0 0 12 12" fill="none">
               <path d="M2.5 9.5L9.5 2.5M9.5 2.5H4M9.5 2.5V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
-          </button>
+          </a>
         </div>
 
       </div>
@@ -451,15 +451,12 @@
           </p>
 
           <div class="final-cta-buttons">
-            <button type="button" class="btn btn-primary btn-xl open-budget-modal" id="final-primary-cta">
-              <span>SOLICITAR ORÇAMENTO</span>
+            <a href="https://wa.me/5561981107284" target="_blank" class="btn btn-primary btn-xl">
+              <span>FALAR COMIGO</span>
               <svg class="btn-arrow" width="16" height="16" viewBox="0 0 12 12" fill="none">
                 <path d="M2.5 9.5L9.5 2.5M9.5 2.5H4M9.5 2.5V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
-            </button>
-            <button type="button" class="btn btn-secondary btn-xl open-budget-modal" id="final-secondary-cta" data-mode="falar">
-              <span>FALAR COMIGO</span>
-            </button>
+            </a>
           </div>
 
           <!-- Trust points -->
@@ -490,100 +487,6 @@
       </div>
     </section>
   </main>
-
-  <!-- ==========================================
-       MODAL DE ORÇAMENTO / BRIEFING DIRETO
-       ========================================== -->
-  <div class="modal-backdrop" id="budget-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-    <div class="modal-window">
-      <div class="modal-header">
-        <div class="modal-title-group">
-          <span class="kicker-mono">DROX // BRIEFING</span>
-          <h3 class="modal-title" id="modal-title">Solicitar Orçamento</h3>
-        </div>
-        <button type="button" class="modal-close-btn" id="modal-close-btn" aria-label="Fechar janela">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <line x1="18" y1="6" x2="6" y2="18"></line>
-            <line x1="6" y1="6" x2="18" y2="18"></line>
-          </svg>
-        </button>
-      </div>
-
-      <form class="modal-body" id="budget-form">
-        <p class="modal-desc">
-          Conte um pouco sobre sua ideia ou necessidade. Retornaremos com disponibilidade e proposta de produção.
-        </p>
-
-        
-
-        <div class="form-grid-2">
-          <!-- Nome / Artista -->
-          <div class="form-group">
-            <label for="input-artist" class="form-label">SEU NOME / NOME ARTÍSTICO *</label>
-            <input 
-              type="text" 
-              id="input-artist" 
-              name="artist_name" 
-              class="form-input" 
-              placeholder="Ex: DJ Alex / Lucas Silva" 
-              required 
-            />
-          </div>
-
-          <!-- Contato (WhatsApp ou E-mail) -->
-          <div class="form-group">
-            <label for="input-contact" class="form-label">SEU WHATSAPP OU E-MAIL *</label>
-            <input 
-              type="text" 
-              id="input-contact" 
-              name="contact_info" 
-              class="form-input" 
-              placeholder="Ex: (61) 99999-9999 ou email" 
-              required 
-            />
-          </div>
-        </div>
-
-        <!-- Link Demo / Referência -->
-        <div class="form-group">
-          <label for="input-link" class="form-label">LINK DA DEMO OU REFERÊNCIA (OPCIONAL)</label>
-          <input 
-            type="url" 
-            id="input-link" 
-            name="demo_link" 
-            class="form-input" 
-            placeholder="SoundCloud / Dropbox / Google Drive / Spotify" 
-          />
-        </div>
-
-        <!-- Briefing Message -->
-        <div class="form-group">
-          <label for="input-briefing" class="form-label">DETALHES DA TRACK / OBSERVAÇÕES</label>
-          <textarea 
-            id="input-briefing" 
-            name="briefing_notes" 
-            rows="3" 
-            class="form-textarea" 
-            placeholder="Conte o que você procura: estilo (Tech House, Minimal, etc.), prazo desejado, se já tem rascunho..."
-          ></textarea>
-        </div>
-
-        <!-- Modal Submit Actions -->
-        <div class="modal-footer-actions">
-          <button type="submit" class="btn btn-primary btn-block btn-lg" id="submit-briefing-btn">
-            <span>ENVIAR BRIEFING</span>
-            <svg class="btn-arrow" width="14" height="14" viewBox="0 0 12 12" fill="none">
-              <path d="M2.5 9.5L9.5 2.5M9.5 2.5H4M9.5 2.5V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </button>
-          
-          <div class="modal-notice">
-            🔒 <span>Suas ideias e dados são tratados sob rigorosa confidencialidade.</span>
-          </div>
-        </div>
-      </form>
-    </div>
-  </div>
 
   <!-- FOOTER -->
   <footer class="site-footer">
