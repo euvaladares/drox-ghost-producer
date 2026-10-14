@@ -57,7 +57,7 @@
           <span class="status-pulse"></span>
           <span class="status-text">DISPONÍVEL P/ PROJETOS</span>
         </div>
-        <a href="https://wa.me/5561981107284" target="_blank" class="btn btn-primary btn-sm" onclick="fbq('track', 'Lead');">
+        <a href="#" class="btn btn-primary btn-sm" data-open-form>
           <span>FALAR COMIGO</span>
           <svg class="btn-arrow" width="12" height="12" viewBox="0 0 12 12" fill="none">
             <path d="M2.5 9.5L9.5 2.5M9.5 2.5H4M9.5 2.5V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -95,7 +95,7 @@
 
           <!-- CTAs -->
           <div class="hero-cta-group">
-            <a href="https://wa.me/5561981107284" target="_blank" class="btn btn-primary btn-lg" onclick="fbq('track', 'Lead');">
+            <a href="#" class="btn btn-primary btn-lg" data-open-form>
               <span>FALAR COMIGO</span>
               <svg class="btn-arrow" width="16" height="16" viewBox="0 0 12 12" fill="none">
                 <path d="M2.5 9.5L9.5 2.5M9.5 2.5H4M9.5 2.5V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -306,7 +306,7 @@
             <span class="banner-title">Pronto para dar início à sua próxima produção?</span>
             <span class="banner-sub">Discuta seu projeto diretamente comigo, sem intermediários.</span>
           </div>
-          <a href="https://wa.me/5561981107284" target="_blank" class="btn btn-primary" onclick="fbq('track', 'Lead');">
+          <a href="#" class="btn btn-primary" data-open-form>
             <span>FALAR COMIGO</span>
             <svg class="btn-arrow" width="14" height="14" viewBox="0 0 12 12" fill="none">
               <path d="M2.5 9.5L9.5 2.5M9.5 2.5H4M9.5 2.5V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -469,7 +469,7 @@
           </p>
 
           <div class="final-cta-buttons">
-            <a href="https://wa.me/5561981107284" target="_blank" class="btn btn-primary btn-xl" onclick="fbq('track', 'Lead');">
+            <a href="#" class="btn btn-primary btn-xl" data-open-form>
               <span>FALAR COMIGO</span>
               <svg class="btn-arrow" width="16" height="16" viewBox="0 0 12 12" fill="none">
                 <path d="M2.5 9.5L9.5 2.5M9.5 2.5H4M9.5 2.5V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -545,6 +545,72 @@
 
     </div>
   </footer>
+
+  <!-- Lead qualification form -->
+  <div class="lf" id="lead-form" role="dialog" aria-modal="true" aria-label="Formulário de contato" hidden>
+    <div class="lf-progress"><div class="lf-progress-bar" id="lf-progress-bar"></div></div>
+    <button type="button" class="lf-close" id="lf-close" aria-label="Fechar formulário">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 4l12 12M16 4L4 16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    </button>
+
+    <div class="lf-stage">
+      <!-- 1. Identificação -->
+      <section class="lf-step" data-step="0">
+        <span class="lf-count">01 / 04</span>
+        <h2 class="lf-title">Vamos começar. Como você se chama?</h2>
+        <label class="lf-label" for="lf-name">Nome completo</label>
+        <input class="lf-input" id="lf-name" type="text" autocomplete="name" placeholder="Digite seu nome completo">
+        <label class="lf-label" for="lf-artist">Nome artístico / Projeto <em>(opcional)</em></label>
+        <input class="lf-input" id="lf-artist" type="text" autocomplete="off" placeholder="Como você assina sua música?">
+        <p class="lf-error" role="alert"></p>
+      </section>
+
+      <!-- 2. Serviço -->
+      <section class="lf-step" data-step="1">
+        <span class="lf-count">02 / 04</span>
+        <h2 class="lf-title">Qual é o serviço principal que você procura?</h2>
+        <div class="lf-options" data-field="service"></div>
+        <p class="lf-error" role="alert"></p>
+      </section>
+
+      <!-- 3. Fase -->
+      <section class="lf-step" data-step="2">
+        <span class="lf-count">03 / 04</span>
+        <h2 class="lf-title">Em que fase se encontra o seu projeto?</h2>
+        <div class="lf-options" data-field="phase"></div>
+        <p class="lf-error" role="alert"></p>
+      </section>
+
+      <!-- 4. Urgência -->
+      <section class="lf-step" data-step="3">
+        <span class="lf-count">04 / 04</span>
+        <h2 class="lf-title">Qual é o seu nível de urgência?</h2>
+        <label class="lf-label" for="lf-urgency">Selecione uma opção</label>
+        <div class="lf-select-wrap">
+          <select class="lf-input lf-select" id="lf-urgency">
+            <option value="">Escolha…</option>
+            <option>Preciso para as próximas semanas</option>
+            <option>Sem pressa, o foco é a qualidade máxima</option>
+          </select>
+        </div>
+        <p class="lf-error" role="alert"></p>
+      </section>
+
+      <!-- 5. Resumo -->
+      <section class="lf-step" data-step="4">
+        <span class="lf-count">Quase lá</span>
+        <h2 class="lf-title">Confira suas respostas</h2>
+        <dl class="lf-summary" id="lf-summary"></dl>
+        <p class="lf-hint">Ao enviar, você será redirecionado ao WhatsApp com a mensagem pronta.</p>
+      </section>
+    </div>
+
+    <div class="lf-nav">
+      <button type="button" class="btn btn-ghost" id="lf-back">Voltar</button>
+      <button type="button" class="btn btn-primary" id="lf-next"><span>OK</span></button>
+      <span class="lf-keyhint" id="lf-keyhint">pressione <kbd>Enter ↵</kbd></span>
+    </div>
+  </div>
 
   <!-- Script logic -->
   <script type="module" src="/src/main.js"></script>
