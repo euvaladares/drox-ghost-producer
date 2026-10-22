@@ -51,9 +51,10 @@ const summaryEl = document.getElementById('lf-summary');
 const nameInput = document.getElementById('lf-name');
 const artistInput = document.getElementById('lf-artist');
 const urgencySelect = document.getElementById('lf-urgency');
+const budgetInput = document.getElementById('lf-budget');
 const SUMMARY_STEP = steps.length - 1;
 
-const answers = { name: '', artist: '', service: '', phase: '', urgency: '' };
+const answers = { name: '', artist: '', service: '', phase: '', urgency: '', budget: '' };
 let current = 0;
 let lastFocus = null;
 
@@ -85,6 +86,10 @@ function restoreSelection(group) {
   group.querySelectorAll('.lf-option').forEach((b, i) => b.classList.toggle('is-selected', i === idx));
 }
 
+function formatBRL(digits) {
+  return `R$ ${Number(digits).toLocaleString('pt-BR')}`;
+}
+
 function buildMessage() {
   const lines = [
     'Olá! Vim pelo site e tenho interesse no seu serviço',
@@ -96,7 +101,8 @@ function buildMessage() {
   lines.push(
     `Serviço: ${answers.service}`,
     `Fase do projeto: ${answers.phase}`,
-    `Urgência: ${answers.urgency}`
+    `Urgência: ${answers.urgency}`,
+    `Investimento: ${formatBRL(answers.budget)}`
   );
   return lines.join('\n');
 }
@@ -108,7 +114,7 @@ function buildWhatsAppUrl() {
 function renderSummary() {
   const rows = [['Nome', answers.name]];
   if (answers.artist) rows.push(['Nome artístico', answers.artist]);
-  rows.push(['Serviço', answers.service], ['Fase do projeto', answers.phase], ['Urgência', answers.urgency]);
+  rows.push(['Serviço', answers.service], ['Fase do projeto', answers.phase], ['Urgência', answers.urgency], ['Investimento', formatBRL(answers.budget)]);
   summaryEl.innerHTML = '';
   rows.forEach(([k, v]) => {
     const wrap = document.createElement('div');
@@ -149,6 +155,14 @@ function validate() {
       return false;
     }
     answers.urgency = urgencySelect.value;
+  } else if (current === 4) {
+    const digits = budgetInput.value.replace(/\D/g, '');
+    if (!digits || Number(digits) <= 0) {
+      showError('Informe um valor para continuar.');
+      budgetInput.focus();
+      return false;
+    }
+    answers.budget = digits;
   }
   return true;
 }
@@ -210,6 +224,10 @@ function next() {
 document.querySelectorAll('[data-open-form]').forEach(el =>
   el.addEventListener('click', e => { e.preventDefault(); openForm(); })
 );
+budgetInput.addEventListener('input', () => {
+  const digits = budgetInput.value.replace(/\D/g, '').replace(/^0+/, '').slice(0, 9);
+  budgetInput.value = digits ? Number(digits).toLocaleString('pt-BR') : '';
+});
 document.getElementById('lf-close').addEventListener('click', closeForm);
 backBtn.addEventListener('click', () => goTo(current - 1));
 nextBtn.addEventListener('click', next);

@@ -2040,3 +2040,8 @@ ul, ol {
 @media (prefers-reduced-motion: reduce) {
   .lf, .lf-step, .lf-progress-bar { transition: none; }
 }
+
+.lf-money { display: flex; align-items: baseline; gap: 0.6rem; border-bottom: 1.5px solid var(--border-medium); margin-bottom: 1.25rem; transition: border-color var(--transition-fast); }
+.lf-money:focus-within { border-bottom-color: var(--accent-amber); }
+.lf-money .lf-input { border-bottom: 0; margin-bottom: 0; }
+.lf-money-prefix { font-family: var(--font-mono); font-size: 1.15rem; color: var(--text-muted); }

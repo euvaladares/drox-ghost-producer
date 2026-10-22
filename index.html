@@ -556,7 +556,7 @@
     <div class="lf-stage">
       <!-- 1. Identificação -->
       <section class="lf-step" data-step="0">
-        <span class="lf-count">01 / 04</span>
+        <span class="lf-count">01 / 05</span>
         <h2 class="lf-title">Vamos começar. Como você se chama?</h2>
         <label class="lf-label" for="lf-name">Nome completo</label>
         <input class="lf-input" id="lf-name" type="text" autocomplete="name" placeholder="Digite seu nome completo">
@@ -567,7 +567,7 @@
 
       <!-- 2. Serviço -->
       <section class="lf-step" data-step="1">
-        <span class="lf-count">02 / 04</span>
+        <span class="lf-count">02 / 05</span>
         <h2 class="lf-title">Qual é o serviço principal que você procura?</h2>
         <div class="lf-options" data-field="service"></div>
         <p class="lf-error" role="alert"></p>
@@ -575,7 +575,7 @@
 
       <!-- 3. Fase -->
       <section class="lf-step" data-step="2">
-        <span class="lf-count">03 / 04</span>
+        <span class="lf-count">03 / 05</span>
         <h2 class="lf-title">Em que fase se encontra o seu projeto?</h2>
         <div class="lf-options" data-field="phase"></div>
         <p class="lf-error" role="alert"></p>
@@ -583,7 +583,7 @@
 
       <!-- 4. Urgência -->
       <section class="lf-step" data-step="3">
-        <span class="lf-count">04 / 04</span>
+        <span class="lf-count">04 / 05</span>
         <h2 class="lf-title">Qual é o seu nível de urgência?</h2>
         <label class="lf-label" for="lf-urgency">Selecione uma opção</label>
         <div class="lf-select-wrap">
@@ -596,8 +596,20 @@
         <p class="lf-error" role="alert"></p>
       </section>
 
-      <!-- 5. Resumo -->
+      <!-- 5. Investimento -->
       <section class="lf-step" data-step="4">
+        <span class="lf-count">05 / 05</span>
+        <h2 class="lf-title">Até quanto você está disposto a investir no projeto?</h2>
+        <label class="lf-label" for="lf-budget">Valor em reais</label>
+        <div class="lf-money">
+          <span class="lf-money-prefix">R$</span>
+          <input class="lf-input" id="lf-budget" type="text" inputmode="numeric" pattern="[0-9]*" autocomplete="off" placeholder="0">
+        </div>
+        <p class="lf-error" role="alert"></p>
+      </section>
+
+      <!-- 6. Resumo -->
+      <section class="lf-step" data-step="5">
         <span class="lf-count">Quase lá</span>
         <h2 class="lf-title">Confira suas respostas</h2>
         <dl class="lf-summary" id="lf-summary"></dl>
