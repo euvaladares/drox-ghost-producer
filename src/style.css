@@ -2045,3 +2045,18 @@ ul, ol {
 .lf-money:focus-within { border-bottom-color: var(--accent-amber); }
 .lf-money .lf-input { border-bottom: 0; margin-bottom: 0; }
 .lf-money-prefix { font-family: var(--font-mono); font-size: 1.15rem; color: var(--text-muted); }
+
+.lf-copy { gap: 0.5rem; }
+.lf-copy[hidden] { display: none; }
+.lf-copy .lf-check-icon { display: none; }
+.lf-copy.is-copied { border-color: var(--accent-green); color: var(--accent-green); }
+.lf-copy.is-copied .lf-copy-icon { display: none; }
+.lf-copy.is-copied .lf-check-icon { display: inline-block; }
+@media (max-width: 600px) {
+  .lf-copy, .lf-nav .btn-primary { flex: 1; justify-content: center; }
+  .lf-step { padding-top: 3.75rem; }
+  .lf.is-summary .lf-nav { flex-wrap: wrap; }
+  .lf.is-summary .lf-nav .btn-ghost { flex: 1 1 100%; margin-right: 0; order: 3; padding-block: 0.6rem; }
+  .lf.is-summary .lf-title { margin-bottom: 1rem; }
+  .lf.is-summary .lf-summary > div { padding: 0.65rem 1rem; }
+}
