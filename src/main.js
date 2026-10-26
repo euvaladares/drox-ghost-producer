@@ -24,7 +24,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // --- LEAD QUALIFICATION FORM ---
-const INSTAGRAM_DM_URL = 'https://ig.me/m/drox_music';
+const WHATSAPP_NUMBER = '5561981107284';
 
 const OPTIONS = {
   service: [
@@ -45,7 +45,6 @@ const form = document.getElementById('lead-form');
 const steps = [...form.querySelectorAll('.lf-step')];
 const backBtn = document.getElementById('lf-back');
 const nextBtn = document.getElementById('lf-next');
-const copyBtn = document.getElementById('lf-copy');
 const keyHint = document.getElementById('lf-keyhint');
 const progressBar = document.getElementById('lf-progress-bar');
 const summaryEl = document.getElementById('lf-summary');
@@ -108,24 +107,8 @@ function buildMessage() {
   return lines.join('\n');
 }
 
-async function copyMessage() {
-  const text = buildMessage();
-  try {
-    await navigator.clipboard.writeText(text);
-    return true;
-  } catch {
-    // Fallback for browsers/contexts without async clipboard access
-    const ta = document.createElement('textarea');
-    ta.value = text;
-    ta.setAttribute('readonly', '');
-    ta.style.cssText = 'position:fixed;opacity:0;top:0;left:0';
-    document.body.appendChild(ta);
-    ta.select();
-    let ok = false;
-    try { ok = document.execCommand('copy'); } catch {}
-    ta.remove();
-    return ok;
-  }
+function buildWhatsAppUrl() {
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(buildMessage())}`;
 }
 
 function renderSummary() {
@@ -201,10 +184,6 @@ function goTo(index) {
   nextBtn.querySelector('span').textContent = isSummary ? 'Enviar' : 'OK';
   nextBtn.classList.toggle('is-send', isSummary);
   const isChoice = index === 1 || index === 2;
-  copyBtn.hidden = !isSummary;
-  form.classList.toggle('is-summary', isSummary);
-  copyBtn.classList.remove('is-copied');
-  copyBtn.querySelector('span').textContent = 'Copiar';
   nextBtn.hidden = isChoice;
   keyHint.hidden = isChoice;
 
@@ -233,8 +212,7 @@ function closeForm() {
 
 function submitForm() {
   if (typeof fbq === 'function') fbq('track', 'Lead');
-  copyMessage();
-  window.open(INSTAGRAM_DM_URL, '_blank', 'noopener');
+  window.open(buildWhatsAppUrl(), '_blank', 'noopener');
   closeForm();
 }
 
@@ -249,17 +227,6 @@ document.querySelectorAll('[data-open-form]').forEach(el =>
 budgetInput.addEventListener('input', () => {
   const digits = budgetInput.value.replace(/\D/g, '').replace(/^0+/, '').slice(0, 9);
   budgetInput.value = digits ? Number(digits).toLocaleString('pt-BR') : '';
-});
-let copyTimer;
-copyBtn.addEventListener('click', async () => {
-  const ok = await copyMessage();
-  copyBtn.classList.toggle('is-copied', ok);
-  copyBtn.querySelector('span').textContent = ok ? 'Copiado!' : 'Falha ao copiar';
-  clearTimeout(copyTimer);
-  copyTimer = setTimeout(() => {
-    copyBtn.classList.remove('is-copied');
-    copyBtn.querySelector('span').textContent = 'Copiar';
-  }, 2500);
 });
 document.getElementById('lf-close').addEventListener('click', closeForm);
 backBtn.addEventListener('click', () => goTo(current - 1));
