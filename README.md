@@ -1,36 +1,44 @@
-# DROX — Ghost Production & Music Studio
+# DROX — Ghost Production & Produção Musical
 
-Landing page premium, minimalista e altamente comercial desenvolvida para o serviço de **Ghost Production e Produção Musical do DROX** (DJ e produtor musical de Brasília, com foco em House e vertentes).
+Landing page de captação de leads para o serviço de ghost production, produção musical, mix e master do DROX (Brasília). Site estático feito com **Vite**, HTML, CSS e JavaScript puros.
 
-## 🚀 Tecnologias
+## Como funciona o funil
 
-- **Vite** (Build tool rápida e moderna)
-- **HTML5 Semântico**
-- **Vanilla CSS3** (Design System dark, glassmorphism, tipografia com Syne, Space Grotesk e JetBrains Mono)
-- **Vanilla JavaScript** (Interações, modal de briefing/orçamento, player de áudio sintético via Web Audio API)
+1. Todos os botões "FALAR COMIGO" (`data-open-form`) abrem um formulário em etapas.
+2. O lead responde: nome (e nome artístico opcional), serviço, fase do projeto, urgência e quanto pode investir.
+3. A última tela mostra um resumo. Ao clicar em **Enviar**, o evento `Lead` é disparado no Meta Pixel e o lead é levado ao WhatsApp com a mensagem pronta.
 
-## 🎧 Estrutura da Landing Page
+O formulário fica no final do `index.html` (`#lead-form`) e a lógica em `src/main.js`.
 
-1. **01 — Hero:** Primeira dobra de alto impacto com fotografia editorial, studio specs flutuantes e marquee contínuo de autoridade (*Vintage Culture, Marco Carola, Bruno Be, GIU, Volkoder, 150K+ Streams*).
-2. **02 — Serviços:** 4 cards objetivos (*Ghost Production, Produção Musical, Refinamento de Demos, Mix & Master*) e showcase interativo de vertentes.
-3. **03 — Como Funciona:** Linha do tempo visual em 4 passos (*Envie sua ideia → Produção → Refinamento → Entrega*).
-4. **04 — Autoridade / DROX:** Destaques e métricas de carreira (*150K+ Streams, 2020 início, Europa lançamentos, Turnê 2025*).
-5. **05 — CTA Final:** Fechamento comercial com garantias de confidencialidade e botões de conversão.
-6. **Modal de Briefing:** Formulário integrado para envio de referências, demos e briefing direto.
-
-## 🛠️ Como Executar Localmente
+## Rodando localmente
 
 ```bash
-# Instalar dependências
 npm install
-
-# Rodar servidor local de desenvolvimento
-npm run dev
-
-# Gerar build de produção
-npm run build
+npm run dev      # servidor de desenvolvimento
+npm run build    # build de produção em dist/
+npm run preview  # serve o build localmente
 ```
 
-## 🔒 Confidencialidade
+## Onde alterar o que muda com frequência
 
-Serviço de Ghost Production 100% confidencial, com cessão integral de direitos e sem exigência de créditos públicos.
+| O quê | Onde |
+| --- | --- |
+| Número do WhatsApp | `WHATSAPP_NUMBER` em `src/main.js` |
+| Texto da mensagem enviada | função `buildMessage()` em `src/main.js` |
+| Opções de serviço e fase do projeto | objeto `OPTIONS` em `src/main.js` |
+| Perguntas de urgência e orçamento | seções `data-step` no `index.html` |
+| ID do Meta Pixel | `index.html` (script no `<head>` e `<noscript>`) |
+| Cores e fontes | variáveis em `:root` no início de `src/style.css` |
+
+## Integrações
+
+- **Meta Pixel** (`PageView` ao carregar, `Lead` ao clicar em Enviar). O pixel e a conta de anúncios devem pertencer ao dono do site.
+- **Vercel Analytics** (`inject()` em `src/main.js`). Só registra dados se o site estiver hospedado na Vercel; em outra hospedagem, remova a linha e a dependência `@vercel/analytics`.
+
+## Deploy
+
+O build gera arquivos estáticos em `dist/` e pode ser publicado em qualquer hospedagem estática (Vercel, Netlify, Cloudflare Pages, etc.).
+
+## Imagens
+
+As fotos em `src/assets/` já estão otimizadas (1200×1800, JPEG). Ao trocar uma foto, redimensione antes de adicionar para manter a página leve.
